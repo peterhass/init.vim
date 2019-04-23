@@ -9,6 +9,9 @@ nnoremap <S-Tab> <<
 inoremap <S-Tab> <C-d>
 nnoremap <C-k> :ALEFix<CR>
 
+" Shortcut to close xml tags
+imap ,/ </<C-X><C-O><Esc>F<i
+
 " restore backspace behavior
 set backspace=2
 
