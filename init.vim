@@ -65,6 +65,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Status Lines
 Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 
 " Git stuff
@@ -95,6 +96,18 @@ set termguicolors
 if has('gui_vimr')
 	set background=dark
 	colorscheme NeoSolarized
+        let g:airline_theme='solarized'
+        
+        " Use light theme during day, dark theme during night
+        let hour = strftime("%H")
+        if 6 <= hour && hour < 18
+          set background=light
+          let g:airline_solarized_bg='light'
+        else
+          set background=dark
+          let g:airline_solarized_bg='dark'
+        endif
+
 	"set guifont=Menlo\ for\ Powerline
         "set Guifont=Fira_Code
 	"set macligatures
@@ -164,3 +177,4 @@ let g:neosnippet#enable_completed_snippet = 1
 
 " Fuzzy Search: Ignore files in .gitignore
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
