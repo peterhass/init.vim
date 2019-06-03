@@ -10,7 +10,7 @@ inoremap <S-Tab> <C-d>
 nnoremap <C-k> :ALEFix<CR>
 
 " Shortcut to close xml tags
-imap ,/ </<C-X><C-O><Esc>F<i
+imap ,/ </<C-X><C-O><Esc>
 
 " restore backspace behavior
 set backspace=2
@@ -52,6 +52,7 @@ Plug 'mxw/vim-jsx'
 Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'mustache/vim-mustache-handlebars'
 " Plug 'ludovicchabant/vim-gutentags' " Since glutentags nvim is very laggy and slow
+Plug 'kchmck/vim-coffee-script'
 
 " Nicer comments
 Plug 'scrooloose/nerdcommenter'
