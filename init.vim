@@ -54,6 +54,9 @@ Plug 'mustache/vim-mustache-handlebars'
 " Plug 'ludovicchabant/vim-gutentags' " Since glutentags nvim is very laggy and slow
 Plug 'kchmck/vim-coffee-script'
 
+" Ruby
+Plug 'tpope/vim-rvm'
+
 " Nicer comments
 Plug 'scrooloose/nerdcommenter'
 
@@ -133,6 +136,7 @@ if !argc()
 
   let g:auto_save = 1
   let g:auto_save_in_insert_mode = 0
+  autocmd BufEnter * Rvm
 endif
 
 "" Deoplete Stuff
@@ -155,14 +159,18 @@ let g:ale_fixers = {
 \  'json': ['prettier'],
 \  'css': ['prettier'],
 \  'vue': ['eslint'],
-\}"
+\  'ruby': ['rubocop']
+\}
 let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '⚠'
 highlight ALEErrorSign ctermbg=NONE ctermfg=red
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 
 let g:ale_linter_aliases = {'vue': ['vue', 'javascript']}
-let g:ale_linters = {'vue': ['eslint', 'vls']}
+let g:ale_linters = {
+      \ 'vue': ['eslint', 'vls'],
+      \ 'ruby': ['rubocop', 'ruby']
+      \}
 
 
 
