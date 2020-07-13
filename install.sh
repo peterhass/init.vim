@@ -20,8 +20,8 @@ fi
 
 
 # deoplete configuration
-pip3 install --user pynvim
-pip2 install --user pynvim
+pip3 install --user pynvim || true
+pip2 install --user pynvim || true
 
 # setup vim-plug
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
