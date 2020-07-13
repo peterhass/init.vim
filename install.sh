@@ -29,7 +29,12 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 
 # clone config
 mkdir -p ~/.config/nvim/
-git clone https://github.com/peterhass/init.vim.git ~/.config/nvim/
+if [ -d ~/.config/nvim/.git ]
+then
+  git -C ~/.config/nvim/ pull
+else
+  git clone https://github.com/peterhass/init.vim.git ~/.config/nvim/
+fi
 
 # update
 nvim +UpdateRemotePlugins +PlugInstall +q
