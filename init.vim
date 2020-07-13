@@ -1,7 +1,7 @@
 :syntax on
 
 " Neovim requires Python paths
-let g:python_host_prog = '/usr/local/bin/python2'
+"let g:python_host_prog = '/usr/local/bin/python2'
 let g:python3_host_prog = '/usr/local/bin/python3'
 
 " allow shift + tab to deintend (like in other IDEs)
@@ -29,14 +29,12 @@ set softtabstop=2
 " change search to be case-insensitive
 set ignorecase
 set smartcase
+set shortmess+=c
 
 call plug#begin('~/.config/nvim/plugged')
 
 " Theme
 Plug 'iCyMind/NeoSolarized'
-
-" Completion
-"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Elixir
 Plug 'elixir-editors/vim-elixir'
@@ -51,7 +49,6 @@ Plug 'leshill/vim-json'
 Plug 'mxw/vim-jsx'
 Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'mustache/vim-mustache-handlebars'
-" Plug 'ludovicchabant/vim-gutentags' " Since glutentags nvim is very laggy and slow
 Plug 'kchmck/vim-coffee-script'
 
 " Ruby
@@ -80,12 +77,6 @@ Plug 'posva/vim-vue'
 
 " Fuzzy Search
 Plug 'ctrlpvim/ctrlp.vim'
-
-" Autocompletion of { blocks
-Plug 'jiangmiao/auto-pairs'
-
-" Autocomplete begin end's
-Plug 'danieljaouen/vim-endwise'
 
 " Autosave
 Plug 'vim-scripts/vim-auto-save'
@@ -122,7 +113,7 @@ if exists('*complete_info')
   inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 else
   inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-endif
+end
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
