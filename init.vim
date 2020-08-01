@@ -38,7 +38,8 @@ Plug 'iCyMind/NeoSolarized'
 
 " Elixir
 Plug 'elixir-editors/vim-elixir'
-Plug 'https://github.com/slashmili/alchemist.vim'
+Plug 'elixir-lsp/coc-elixir', {'do': 'yarn install && yarn prepack'}
+
 
 " JS
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install && npm install -g tern' }
